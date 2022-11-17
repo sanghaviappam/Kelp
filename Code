@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class Bank
+{
+public:
+char name[20];
+char account_number[10];
+int balance=0;
+void create()
+{
+cout<<"\nCREATE ";
+cin>>account_number>>name;
+}
+void deposit()
+{
+int bal;
+cout<<"DEPOSIT "<<account_number<<" ";
+cin>>bal;
+balance+=bal;
+}
+void withdraw()
+{
+int bal;
+cout<<"WITHDRAW "<<account_number<<" ";
+cin>>bal;
+if(bal<=balance)
+{
+balance-=bal;
+}
+else
+{
+exit(0);
+}
+}
+void balance1()
+{
+    cout<<"BALANCE ";
+    cin>>account_number;
+}
+void display()
+{
+
+cout<<name<<" "<<balance<<"\n";
+}
+};
+
+int main()
+{
+int i;
+Bank bk,bk1;
+bk.create();
+bk.deposit();
+bk.withdraw();
+bk1.create();
+bk1.deposit();
+bk1.withdraw();
+bk.balance1();
+bk1.balance1();
+bk.display();
+bk1.display();
+return 0;
+}
